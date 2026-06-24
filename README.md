@@ -1,7 +1,7 @@
 # Wallhop-NOVA-CLIENT
 You have to doawnload Autohotkey in Microsoft store or Online. Then make a new Hotkey script and Edit the script i gave! FOLLOW Robil420 On roblox for more Clients! Here is the ✦NovaHop Client✦ Script: 
 
-Made by Robil420 follow me on roblox for more Clients!
+
 #NoEnv
 #SingleInstance Force
 SendMode Input
