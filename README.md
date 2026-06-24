@@ -10,7 +10,6 @@ SetTitleMatchMode, 2
 Toggle := 0
 Hidden := false
 
-; GUI
 Gui, +AlwaysOnTop -MaximizeBox -MinimizeBox +ToolWindow
 Gui, Color, 0B0F1A
 
@@ -29,7 +28,6 @@ F3::ExitApp
 
 UpdateStatus() {
     global Toggle
-
     if (Toggle)
     {
         GuiControl, +c00FF00, StatusText
@@ -43,32 +41,29 @@ UpdateStatus() {
 }
 
 ~p::
-    Hidden := !Hidden
-
-    if (Hidden)
-    {
-        Gui, Hide
-    }
-    else
-    {
-        Gui, Show
-        UpdateStatus()
-    }
+Hidden := !Hidden
+if (Hidden)
+    Gui, Hide
+else
+{
+    Gui, Show
+    UpdateStatus()
+}
 return
 
 ~q::
-    Toggle := !Toggle
-    UpdateStatus()
+Toggle := !Toggle
+UpdateStatus()
 return
 
 ~LButton::
-    if (Toggle)
-    {
-        MouseGetPos, , y
-        MouseMove, 600, %y%
-        Sleep, 50
-        MouseMove, 700, %y%
-    }
+if (Toggle)
+{
+    MouseGetPos, , y
+    MouseMove, 600, %y%
+    Sleep, 50
+    MouseMove, 700, %y%
+}
 return
 
 GuiClose:
