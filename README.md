@@ -27,7 +27,11 @@ Gui, Add, Text, x0 w250 Center, P = Hide GUI | Q = Toggle Wallhop
 Gui, Font, s11 Bold cFF4040, Segoe UI
 Gui, Add, Text, vStatusText x0 w250 Center, ● Status: OFF
 
-Gui, Show, w260 h140, NovaClient- Follow Robil420 on roblox!
+Gui, Show, w260 h140, NovaClient - Follow Roblox!
+
+ShowTip("Nova Client Loaded Successfully! V1")
+
+Return
 
 ; -------------------------
 ; EXIT
@@ -40,7 +44,21 @@ ExitApp
 ; -------------------------
 ; FUNCTIONS
 ; -------------------------
-UpdateStatus() {
+
+ShowTip(Text)
+{
+    ; 🔥 löscht ALTE Message sofort
+    TrayTip
+
+    ; kleine Stabilisierung für Windows
+    Sleep, 50
+
+    ; neue Message anzeigen
+    TrayTip, NovaHop Client, %Text%, 2, 1
+}
+
+UpdateStatus()
+{
     global Toggle
 
     if (Toggle)
@@ -61,18 +79,29 @@ UpdateStatus() {
 
 ~p::
 Hidden := !Hidden
+
 if (Hidden)
+{
     Gui, Hide
+    ShowTip("GUI Hidden!")
+}
 else
 {
     Gui, Show
     UpdateStatus()
+    ShowTip("GUI Shown!")
 }
 return
 
 ~q::
 Toggle := !Toggle
 UpdateStatus()
+
+if (Toggle)
+    ShowTip("Wallhop ON!")
+else
+    ShowTip("Wallhop OFF!")
+
 return
 
 ~LButton::
