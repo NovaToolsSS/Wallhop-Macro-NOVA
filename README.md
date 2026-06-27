@@ -27,7 +27,7 @@ Gui, Add, Text, x0 w250 Center, P = Hide GUI | Q = Toggle Wallhop
 Gui, Font, s11 Bold cFF4040, Segoe UI
 Gui, Add, Text, vStatusText x0 w250 Center, ● Status: OFF
 
-Gui, Show, w260 h140, NovaClient - Follow Roblox!
+Gui, Show, w260 h140, NovaClient - Follow Robil420 on Roblox!
 
 ShowTip("Nova Client Loaded Successfully! V1")
 
